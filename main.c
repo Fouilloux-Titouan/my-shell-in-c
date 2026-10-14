@@ -1,27 +1,28 @@
 #include <stdio.h>
 #include <string.h>
 
-#define  length_commande 50
+#define  LENGTH_COMMANDE 50
 
-int in(char commande[length_commande]){
-    for (int i = 0; i < length_commande; i++){
+int contains_newline(char commande[LENGTH_COMMANDE]){
+    for (int i = 0; i < LENGTH_COMMANDE; i++){
         if (commande[i] == '\n'){
             return 1;
+        } if (commande[i] == 0){
+            return 0;
         }
     }
     return 0;
 }
 
 int main(int argc, char *argv[]){
-    int work = 1;
-    while (work){
-        char commande[length_commande];
+    while (1){
+        char commande[LENGTH_COMMANDE];
 
         printf(">> ");
         fflush(stdout);
 
         if (fgets(commande, sizeof(commande), stdin) != NULL){ // A comprendre
-            if (in(commande)){
+            if (contains_newline(commande)){
                 if (strcmp(commande, "exit\n") == 0){
                     break;
                 }
