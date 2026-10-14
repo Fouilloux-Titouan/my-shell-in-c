@@ -2,6 +2,8 @@
 #include <string.h>
 
 #define  LENGTH_COMMANDE 50
+#define  LENGTH_LIST 50
+
 
 int contains_newline(char commande[LENGTH_COMMANDE]){
     for (int i = 0; i < LENGTH_COMMANDE; i++){
@@ -17,6 +19,7 @@ int contains_newline(char commande[LENGTH_COMMANDE]){
 int main(int argc, char *argv[]){
     while (1){
         char commande[LENGTH_COMMANDE];
+        char *liste_commande[LENGTH_LIST];
 
         printf(">> ");
         fflush(stdout);
