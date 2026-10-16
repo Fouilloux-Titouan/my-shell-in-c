@@ -1,0 +1,35 @@
+# --- Fichiers compilés C ---
+*.o
+*.a
+*.so
+*.dylib
+
+# --- Exécutables et sorties de build ---
+# (Remplacez ou ajoutez le nom de vos exécutables si besoin)
+*.out
+a.out
+build/
+bin/
+obj/
+
+# --- Exécutables et fichiers système macOS ---
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# --- IDE et Éditeurs (VS Code, Xcode, etc.) ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.xcodeproj/
+.xcworkspace/
+xcuserdata/
+DerivedData/
+
+test.c
