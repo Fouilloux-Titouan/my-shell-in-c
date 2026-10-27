@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <string.h>
+#include "parse.h"
 
 #define  LENGTH_COMMANDE 50
 #define  LENGTH_LIST 50
+
+void parse_commande(char *commande, char *liste_commande[]);
 
 
 int contains_newline(char commande[LENGTH_COMMANDE]){
@@ -17,6 +20,7 @@ int contains_newline(char commande[LENGTH_COMMANDE]){
 }
 
 int main(int argc, char *argv[]){
+    printf("Nouveau Shell !\n");
     while (1){
         char commande[LENGTH_COMMANDE];
         char *liste_commande[LENGTH_LIST];
@@ -24,10 +28,13 @@ int main(int argc, char *argv[]){
         printf(">> ");
         fflush(stdout);
 
-        if (fgets(commande, sizeof(commande), stdin) != NULL){ // A comprendre
+        if (fgets(commande, sizeof(commande), stdin) != NULL){ 
             if (contains_newline(commande)){
                 if (strcmp(commande, "exit\n") == 0){
                     break;
+                } else {
+                    parse_commande(commande, liste_commande);
+                    
                 }
             } else {
                 int c;
@@ -35,6 +42,7 @@ int main(int argc, char *argv[]){
             }
         }
     }
+    printf("Exit ...\n");
     return 0;
 }
 

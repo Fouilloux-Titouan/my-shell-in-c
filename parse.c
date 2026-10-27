@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-//#include "parse.h"
+#include "parse.h"
 
 #define LENGTH_COMMANDE 50
 
@@ -13,8 +13,6 @@ void parse_commande(char *commande, char *liste_commande[]){
 
     
     while (commande[i_commande] != '\n' && commande[i_commande] != 0){
-        printf("%lu|\n", strlen(str_tmp));
-
         if (commande[i_commande] == ' ' ){
             if (1){
                 strcpy(commande_a_copier[i_liste], str_tmp);
@@ -35,19 +33,4 @@ void parse_commande(char *commande, char *liste_commande[]){
         strcpy(commande_a_copier[i_liste], str_tmp);
         i_liste++;
     }
-
-
-
-    for (int i = 0; i<i_liste; i++){
-        printf("%d : %s\n", i, commande_a_copier[i]);
-    }
-
-
-
-}
-
-int main(){
-    char *c[500] ;
-    parse_commande("sudo apt install wget coucou abeille jkcjhz efz b ezfe  f zef    zef", c);
-    return 0;
 }
